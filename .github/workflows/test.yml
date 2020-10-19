@@ -44,7 +44,6 @@ jobs:
         uses: borales/actions-yarn@v2.0.0
         with:
           cmd: coverage
-      - run: find ./ -name "clover.xml" 
       - name: Upload coverage
         uses: codecov/codecov-action@v1
         with:

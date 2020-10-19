@@ -40,9 +40,13 @@ jobs:
         with:
           cmd: build
             
-      - name: Generate coverage file
+      - name: Generate coverage report
         uses: borales/actions-yarn@v2.0.0
         with:
           cmd: coverage
-  after_success:
-    - codecov
+      - name: Upload coverage
+        uses: codecov/codecov-action@v1
+        with:
+          token: 2ca1d20f-cd75-4081-8a94-62f6cce3f4fa
+          file: ./clover.xml
+          directory: ./coverage

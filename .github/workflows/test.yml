@@ -47,5 +47,4 @@ jobs:
       - name: Upload coverage
         uses: codecov/codecov-action@v1
         with:
-          token: 2ca1d20f-cd75-4081-8a94-62f6cce3f4fa
           file: ./coverage/clover.xml

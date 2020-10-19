@@ -35,7 +35,14 @@ jobs:
         with:
           cmd: test
 
-      - name: Buile test
+      - name: Build test
         uses: borales/actions-yarn@v2.0.0
         with:
           cmd: build
+            
+      - name: Generate coverage file
+        uses: borales/actions-yarn@v2.0.0
+        with:
+          cmd: coverage
+  after_success:
+    - codecov
